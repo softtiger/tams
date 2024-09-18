@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 80034
 File Encoding         : 65001
 
-Date: 2024-09-09 10:08:35
+Date: 2024-09-18 10:11:38
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -572,22 +572,17 @@ CREATE TABLE `tbl_org` (
   `leader` int DEFAULT NULL COMMENT '负责人',
   `create_by` int DEFAULT NULL COMMENT '创建人',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
-  `classification` int NOT NULL,
-  `fullname` varchar(40) NOT NULL,
-  `gender` int NOT NULL,
-  `mobile` varchar(20) DEFAULT NULL,
-  `org_id` int NOT NULL,
-  `position_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb3 COMMENT='组织';
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb3 COMMENT='组织';
 
 -- ----------------------------
 -- Records of tbl_org
 -- ----------------------------
-INSERT INTO `tbl_org` VALUES ('1', '1', '001', '云服务商', '1', '1', null, '0', '1', '2023-11-03 05:50:24', '0', '', '0', null, '0', '0');
-INSERT INTO `tbl_org` VALUES ('2', '2', '001', '友商公司', '1', '1', null, '0', '1', '2023-11-03 14:18:58', '0', '', '0', null, '0', '0');
-INSERT INTO `tbl_org` VALUES ('21', '1', '010', '财务部', '3', '1', '1', null, '1', '2024-06-14 10:28:11', '0', '', '0', null, '0', '0');
-INSERT INTO `tbl_org` VALUES ('22', '1', '200', '合肥分公司', '2', '1', '1', null, '1', '2024-06-14 10:27:58', '0', '', '0', null, '0', '0');
+INSERT INTO `tbl_org` VALUES ('1', '1', '001', '云服务商', '1', '1', null, '0', '1', '2023-11-03 05:50:24');
+INSERT INTO `tbl_org` VALUES ('2', '2', '001', '友商公司', '1', '1', null, '0', '1', '2023-11-03 14:18:58');
+INSERT INTO `tbl_org` VALUES ('21', '1', '010', '财务部', '3', '1', '1', null, '1', '2024-06-14 10:28:11');
+INSERT INTO `tbl_org` VALUES ('22', '1', '200', '合肥分公司', '2', '0', '1', null, '1', '2024-09-18 09:31:13');
+INSERT INTO `tbl_org` VALUES ('23', '1', '040', '开发部', '2', '1', '1', null, '1', '2024-09-18 09:36:36');
 
 -- ----------------------------
 -- Table structure for tbl_org_depart
@@ -650,7 +645,7 @@ CREATE TABLE `tbl_org_position` (
   `create_time` datetime NOT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`),
   KEY `un_tenant_code` (`tenant_id`,`code`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb3 COMMENT='职位';
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb3 COMMENT='职位';
 
 -- ----------------------------
 -- Records of tbl_org_position
@@ -660,6 +655,7 @@ INSERT INTO `tbl_org_position` VALUES ('2', '1', '020', '测试', '1', '1', '202
 INSERT INTO `tbl_org_position` VALUES ('12', '2', '060', '美工', '1', '326', '2023-11-10 13:54:47');
 INSERT INTO `tbl_org_position` VALUES ('13', '2', '070', '行政总监', '1', '326', '2023-11-10 13:55:27');
 INSERT INTO `tbl_org_position` VALUES ('24', '1', '030', '运维', '1', '1', '2024-06-14 10:26:24');
+INSERT INTO `tbl_org_position` VALUES ('25', '2', '010', '开发', '0', '326', '2024-09-18 09:55:24');
 
 -- ----------------------------
 -- Table structure for tbl_tenant
